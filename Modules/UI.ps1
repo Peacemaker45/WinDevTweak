@@ -109,7 +109,7 @@ function New-TweakCard {
         'Medium' { '#d29922' }
         default  { '#e6edf3' }
     }
-    $sp.Children.Add($tbName)
+    [void][void][void][void]$sp.Children.Add($tbName)
     
     if ($Tweak.RiskLevel -ne 'Low') {
         $tbRisk = New-Object System.Windows.Controls.TextBlock
@@ -119,7 +119,7 @@ function New-TweakCard {
         $tbRisk.FontWeight = 'Bold'
         $tbRisk.Margin = '0,4,0,0'
         $tbRisk.Opacity = 0.9
-        $sp.Children.Add($tbRisk)
+        [void][void][void][void]$sp.Children.Add($tbRisk)
     }
     
     $tbDesc = New-Object System.Windows.Controls.TextBlock
@@ -129,7 +129,7 @@ function New-TweakCard {
     $tbDesc.TextWrapping = 'Wrap'
     $tbDesc.Margin = '0,6,0,0'
     $tbDesc.LineHeight = 16
-    $sp.Children.Add($tbDesc)
+    [void][void][void][void]$sp.Children.Add($tbDesc)
     
     $tbId = New-Object System.Windows.Controls.TextBlock
     $tbId.Text = $Tweak.Id
@@ -137,7 +137,7 @@ function New-TweakCard {
     $tbId.FontSize = 9
     $tbId.Margin = '0,8,0,0'
     $tbId.FontFamily = 'Cascadia Mono, Consolas'
-    $sp.Children.Add($tbId)
+    [void][void][void][void]$sp.Children.Add($tbId)
     
     [void]$grid.Children.Add($sp)
     [System.Windows.Controls.Grid]::SetColumn($sp, 1)
@@ -188,14 +188,14 @@ $allItem.Content = "All Tweaks"
 $allItem.Tag = $null
 $allItem.FontWeight = 'SemiBold'
 $allItem.Foreground = '#e6edf3'
-$CategoryList.Items.Add($allItem)
+[void][void][void][void]$CategoryList.Items.Add($allItem)
 
 foreach ($cat in $config.Categories) {
     $item = New-Object System.Windows.Controls.ListBoxItem
     $count = $tweakCounts[$cat.Id]
     $item.Content = "$($cat.Name)"
     $item.Tag = $cat.Id
-    $CategoryList.Items.Add($item)
+    [void][void][void][void]$CategoryList.Items.Add($item)
 }
 
 $CategoryList.Add_SelectionChanged({
@@ -377,3 +377,7 @@ $SearchBox.Foreground = '#484f58'
 Write-Log 'WinDevTweak v1.1.0 loaded. Select tweaks and click Apply.' -Level Info -LogBox $LogBox
 
 [void]$window.ShowDialog()
+
+
+
+

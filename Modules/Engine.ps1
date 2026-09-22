@@ -4,7 +4,11 @@ $script:BackupDir = "$env:TEMP\WinDevTweak\Backups"
 
 function Import-TweaksConfig {
     $path = Join-Path $PSScriptRoot '..\Config\Tweaks.psd1'
-    Import-PowerShellDataFile -Path $path
+    if (Get-Command Import-PowerShellDataFile -ErrorAction SilentlyContinue) {
+        Import-PowerShellDataFile -Path $path
+    } else {
+        & ([scriptblock]::Create((Get-Content -Path $path -Raw)))
+    }
 }
 
 function New-SystemRestorePoint {
@@ -142,3 +146,10 @@ function Write-Log {
         }
     }
 }
+
+
+
+
+
+
+

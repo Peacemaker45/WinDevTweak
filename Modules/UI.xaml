@@ -35,7 +35,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Custom Title Bar -->
-        <Border Grid.ColumnSpan="2" Background="#161b22" BorderBrush="#30363d" BorderThickness="0,0,0,1" MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+        <Border Grid.ColumnSpan="2" Background="#161b22" BorderBrush="#30363d" BorderThickness="0,0,0,1">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -65,7 +65,7 @@
                          Text="Search tweaks..."/>
             </Border>
             <Border Grid.Row="1" Background="#161b22" BorderBrush="#30363d" BorderThickness="0,0,1,1" Padding="16,10">
-                <TextBlock Text="CATEGORIES" FontSize="10" FontWeight="Bold" Foreground="#484f58" LetterSpacing="2"/>
+                <TextBlock Text="CATEGORIES" FontSize="10" FontWeight="Bold" Foreground="#484f58"/>
             </Border>
             <Border Grid.Row="2" BorderBrush="#30363d" BorderThickness="0,0,1,0">
                 <ListBox x:Name="CategoryList" Background="Transparent" BorderThickness="0"/>
@@ -126,3 +126,9 @@
         </Grid>
     </Grid>
 </Window>
+
+
+
+
+
+
